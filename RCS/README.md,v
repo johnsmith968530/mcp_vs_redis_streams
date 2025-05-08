@@ -1,6 +1,35 @@
-* `$Source: /home/x/Dropbox/3/Documents/MCP_vs_Redis_Streams/RCS/README.md,v $`
-* `$Date: 2025/05/08 06:25:18 $`
-* `$Revision: 1.2 $`
+head	1.2;
+access;
+symbols;
+locks
+	x:1.2; strict;
+comment	@# @;
+
+
+1.2
+date	2025.05.08.06.25.18;	author x;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2025.05.08.06.24.21;	author x;	state Exp;
+branches;
+next	;
+
+
+desc
+@Dropbox/3/Documents/MCP_vs_Redis_Streams/README.md
+@
+
+
+1.2
+log
+@Try to fix Github markdown.
+@
+text
+@* `$Source: /home/x/Dropbox/3/Documents/MCP_vs_Redis_Streams/RCS/README.md,v $`
+* `$Date: 2025/05/08 06:24:21 $`
+* `$Revision: 1.1 $`
 
 # MCP vs Message Bus Architecture w/ Redis Streams
 
@@ -24,3 +53,17 @@
     * I wound up keeping the JSON as a single string value in Redis.
 
 * vim: set et ff=unix ft=markdown nocp sts=2 sw=2 ts=2:
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 3
+a3 3
+* $Source$
+* $Date$
+* $Revision$
+@
