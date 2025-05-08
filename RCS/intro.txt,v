@@ -1,0 +1,50 @@
+head	1.2;
+access;
+symbols;
+locks
+	x:1.2; strict;
+comment	@# @;
+
+
+1.2
+date	2025.05.08.18.47.08;	author x;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2025.05.08.18.46.21;	author x;	state Exp;
+branches;
+next	;
+
+
+desc
+@Dropbox/3/Documents/MCP_vs_Redis_Streams/intro.txt
+@
+
+
+1.2
+log
+@Fix MCP abbreviation.
+@
+text
+@Hello, beautiful minds! I'm Jordan. Welcome to our journey from the lonely islands of MCP servers to the vibrant metropolis of Redis Streams! What if I told you we've been building AI agent systems the equivalent of passing notes in class when we could be hosting a neural network party?
+
+Here's our delightful problem: When multiple AI agents need to collaborate, traditional model context protocol architectures force them into a rigid, synchronous conversation—like brilliant colleagues who can only speak when directly addressed by their manager. One client, multiple servers, endless waiting. In a world where parallel processing is our superpower, this is tragic!
+
+Today, we're diving into how Redis Streams transforms this stilted conversation into a dynamic, fault-tolerant symphony of concurrent communication. We'll explore how message bus architecture doesn't just solve scaling issues—it fundamentally changes what's possible when AI agents collaborate.
+
+And yes, we'll candidly discuss the battle scars—from wrestling with Rust's static typing to those 3 AM debugging sessions where you question every life decision that led you to care about nested JSON structures.
+
+So whether you're building the next multi-agent system or just curious about distributed architecture that doesn't collapse under real-world conditions—fasten your seatbelts! We're about to traverse the fascinating landscape where theory meets practicality, where elegant solutions emerge from frustrating limitations, and where your AI agents finally get to have the efficient, resilient conversations they deserve!
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d3 1
+a3 1
+Here's our delightful problem: When multiple AI agents need to collaborate, traditional Master Control Program architectures force them into a rigid, synchronous conversation—like brilliant colleagues who can only speak when directly addressed by their manager. One client, multiple servers, endless waiting. In a world where parallel processing is our superpower, this is tragic!
+@

@@ -1,0 +1,53 @@
+head	1.1;
+access;
+symbols;
+locks
+	x:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	2025.05.08.22.14.29;	author x;	state Exp;
+branches;
+next	;
+
+
+desc
+@Dropbox/3/Documents/MCP_vs_Redis_Streams/talk.txt
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@1. Run `ristretto /home/x/Dropbox/3/Documents/MCP_vs_Redis_Streams/Jordan.png &` in the command line.
+
+2. Read the text in `/home/x/Dropbox/3/Documents/MCP_vs_Redis_Streams/intro.txt` and send the text to elevenlabs using voice ID `sQGVTpDH1VRKqccSfhZD`.
+
+3. Run `ristretto /home/x/Dropbox/3/Documents/MCP_vs_Redis_Streams/Standard_MCP_architecture.png &`.
+
+4. Send "Quick review: here's your typical MCP architecture. It's painful to debug because you don't know if the problem is with the MCP client or the MCP server. It's hard to write unit tests. It's inefficient when you have many concurrent users, because most of the MCP server processes will sit idle. No automated retries, no automated failover, no concurrency, no composability." to elevenlabs using voice ID `uARimvQtssS9juYUXwDz`. Don't specify a language.
+
+5. Run `ristretto /home/x/Dropbox/3/Documents/MCP_vs_Redis_Streams/Message_bus_architecture.png &`.
+
+6. Send "A typical real-world solution is to use something like message queues. I prefer Redis Streams, because it has a push mechanism so servers don't have to constantly poll. This minimizes latency. Redis Streams also has worker pools, so if a worker process crashes due to a memory leak, or one server goes down due to a drive failure, another worker on a different machine can retry the task. There are drawbacks, though: there are several possible race conditions you can run into, but those would take some time to explain so I won't get into that in this talk." to elevenlabs using voice ID `C5p9Oew9O2ISSWuH8CJy`. Don't specify a language.
+
+7. Run `ristretto /home/x/Dropbox/3/Documents/MCP_vs_Redis_Streams/Cline_architecture.png &`.
+
+8. Send "In order to transform the standard MCP architecture into the message bus architecture, you can create a bridge. The bridge itself is lightweight, so it takes up minimal resources. Let me demonstrate asking Cline to call an image processing server, which calls another server that makes an API call. This demonstrates how this architecture allows composability." to elevenlabs using voice ID `cDlpSrtJxvKRloaZV7dA`.
+
+9. Run image processing on `/home/x/Dropbox/3/Documents/MCP_vs_Redis_Streams/Cline_architecture.png`.
+
+7. Send "Almost all the code was AI-generated, so I'll only show a few snippets to give you the flavor. The real value to you is knowing what problems we ran into, and how we got around them." to elevenlabs using voice ID `Tcn9DtjLbTaX9WeDxdWp`. Don't specify a language.
+
+8. Run `code /home/x/Dropbox/2/src/rust/image-processing-rs-worker/test_jobs1.py` on the command line.
+
+9. Send "Here's a unit test for the image processing server. It puts an image processing job on the image-processing requests stream, and waits for the result on the image-processing responses stream." to elevenlabs using voice ID `sQGVTpDH1VRKqccSfhZD`.
+
+10. Send to elevenlabs using voice ID `sQGVTpDH1VRKqccSfhZD`:
+"""
+So here are the gocha's that kept me up at night. First, Rust is statically typed, so if your messages are JSON, Rust doesn't have nested dictionary types like Python or Node. I wound up keeping the JSON string as a string, and deserializing the portions I needed on an as-needed basis. Ugh! Second, Redis has a key-value store type, but they implemented it on top of a 1-D array, so it also doesn't have the nested dictionary and nested arrays like Python and Node. When I tried serializing and de-serializing a nested dictionary in Rust + Redis, I got back a dictionary of JSON strings. Ugh! I wound up keeping the JSON as a single string value in Redis. Third, I'd recommend using the same version of the MCP libraries across all the clients and servers in the system, as the code seems to be evolving rapidly. I ran into a situation where some AI-generated code pulled in an older version that was subtly incompatible with newer versions and it took forever to figure out what was going on.
+"""
+@
